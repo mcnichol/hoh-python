@@ -31,3 +31,11 @@ $> sudo vim /etc/wsl.conf
 [automount]
 options = "metadata"
 ```
+* There are a few Quality of Life improvements over Powershell / CMD. 
+  * Highly recommend using [Windows Terminal](https://docs.microsoft.com/en-us/windows/terminal/) or something similar. Visibility, Font Support, and overall usability is dramatically better. It's not quite Linux but it's much closer to what you'd be expecting. 
+  * I swap shells to zsh and style it with [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) (Agnoster Theme), and [Powerline Fonts](https://github.com/powerline/fonts) (DejaVu Mono has the best character support for my gitflow)
+  * adjusting the file/directory highlighting as I have this hideous Green+Blue that is painful to decipher. 
+    ```
+    $> dircolors --print-database > ~/.dircolors	# Modify OTHER_WRITABLE variable (~Line 60). First code is font color, second is background color i.e. 37;42  is white text on green
+    $> echo 'test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"' >> ~/.zshrc 	# It already exists in .bashrc if you haven't switched shells
+    ```
